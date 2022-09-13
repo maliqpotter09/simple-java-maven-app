@@ -3,5 +3,11 @@ node {
         stage('Build') {
             sh 'mvn -B -DskipTests clean package'
         }
+        stage('Test') {
+            sh 'mvn Test'
+            def postAlways() {
+            junit 'target/surefire-reports/*.xml'
+            }
+        }
     }
 }
