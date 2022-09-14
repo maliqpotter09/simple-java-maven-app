@@ -31,7 +31,6 @@ pipeline {
         }
         stage('Deploy') { 
             steps {
-                input message: 'Lanjutkan ke tahap Deploy?'
                 sh './jenkins/scripts/deliver.sh'
                 sleep(time: 1, unit: "MINUTES") 
             }
