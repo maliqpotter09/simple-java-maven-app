@@ -24,9 +24,10 @@ pipeline {
                 }
             }
         }
-        stage('Deliver') { 
+        stage('Deploy') { 
             steps {
-                sh './jenkins/scripts/deliver.sh' 
+                sh './jenkins/scripts/deliver.sh'
+                sleep(time: 60, unit: "SECONDS") 
             }
         }
     }
